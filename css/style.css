@@ -1,0 +1,17 @@
+body{
+  background-color:none;
+}
+.login{
+       width:400px;
+}
+.help{
+  color:green;
+  text-align:left;
+}
+.forms{
+  background-color:#a9c2a9;
+  width:100%;
+}
+.login_error{
+   color:red;
+}
