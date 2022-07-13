@@ -1,0 +1,83 @@
+<nav>
+<ul>
+<li><a href="#">Cuenta</a>
+	<ul>
+		<li><a href="changeID.php">Cambiar ID</a></li>
+		
+	
+		<li><a href="changePWD.php">Cambia la contraseña</a></li>
+		
+		
+		
+		<li><a href="logout/logout.php">Cerrar sesión
+</a></li>
+		
+	</ul>
+
+
+
+</li>
+
+<li><a href="#">Informe</a>
+	<ul>
+		<li><a href="attendance_print_report.php">Asistencia
+</a></li>
+		
+	</ul>
+</li>
+<li><a href="#">Cursos</a>
+	<ul>
+		<li><a href="subject_register.php">Registro</a></li>
+		<li><a href="editSubject.php">Editar</a></li>
+		
+	</ul>
+</li>
+<li><a href="#">Estudiante</a>
+	<ul>
+		<li><a href="student_register.php">Registro</a></li>
+		<li><a href="student_view.php">Ver</a></li>
+		<li><a href="promote.php">Promover</a></li>
+		<li><a href="detain.php">Detener</a></li>
+		<li><a href="undetain.php">Desconocer</a></li>
+        <li><a href="record_notes.php">Registro de Notas</a></li>
+        
+		
+	</ul>
+</li>
+<li><a href="#">Escuela </a>
+	<ul>
+		<li><a href="fac_register.php">Registro</a></li>
+			<li><a href="fac_view.php">Ver</a></li>
+		<li><a href="sub_allocate.php">Asignación de cursos</a></li>  
+		<li><a href="edit_alloc.php">Asignación de cambio</a></li>
+		<li><a href="class_report.php">Detalle de clase</a></li>
+		<li><a href="fac_subdetails.php">Malla Curricular</a></li>
+		<li><a href="resetPWD.php">Restablecer la contraseña</a></li>
+							
+	
+	</ul>
+</li>
+
+<li><a href="#">Asistencia</a>
+	<ul>
+		<li><a href="add_attendance.php">Agregar asistencia</a></li>
+		<li><a href="edit_attandance.php">Editar asistencia</a></li>
+		<li><a href="#">Ver</a>
+			<ul><li>
+			<a href="view.php">Ver Asistencia Diaria</a></li>
+		<li><a href="view_monthly.php">Ver asistencia mensual</a>
+		</li></ul></li>
+		
+	</ul>
+</li>
+<li><a href="#">Horario</a>
+	<ul>
+		<li><a href="add_timetable.php">Registro</a></li>
+		<li><a href="edit_timetable.php">Modificar</a></li>
+		<li><a href="view_timetable.php">Ver</a></li>				
+	
+	</ul>
+</li>
+<li><a href="index.php">Inicio</a></li>
+</ul>
+</nav>
