@@ -81,7 +81,7 @@ include ("../include/connect.php");
 if(isset($_POST["sem"]) && isset($_POST["section"])){
 	$a = $_POST["sem"];
 	$section = $_POST["section"];
-	// for first year first semester attendance
+	//Para la asistencia del primer semestre de primer año
 	if($a == "I-I"){
 		$sql = mysqli_query($connect, "SELECT id,sem,sec,sname FROM s1 WHERE sec = '$section'");
 		$count =  mysqli_num_rows($sql);
