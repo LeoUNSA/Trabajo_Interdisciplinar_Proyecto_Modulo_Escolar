@@ -1,6 +1,6 @@
 <?php
 session_start();
-//including the script to connect to mysql server and to select the db
+//incluyendo el código para conectar a la base de datos respectiva
 include ("include/connect.php");
 $id='';
 $did='';
@@ -20,17 +20,17 @@ if(isset($_SESSION["did"])){
 	
 
 }
-//declaring variables to hod the value that is posted from the form
+//declaramos las variables para recoger la información del formulario
 $error='';
 if(isset($_POST["lid"]) && isset($_POST["lpwd"]) && isset($_POST["design"])){
-	$login_id = preg_replace('#[^A-Za-z0-9_\&\*\#\@]#i', '', $_POST["lid"]); // filter everything but numbers and letters
-	$login_pwd = preg_replace('#[^A-Za-z0-9_\&\*\#\@]#i', '', $_POST["lpwd"]); // filter everything but numbers and letters
-	$login_design = preg_replace('#[^0-9]#i', '', $_POST["design"]); // filter everything but  letters
+	$login_id = preg_replace('#[^A-Za-z0-9_\&\*\#\@]#i', '', $_POST["lid"]); // Filtramos todo excepto numeros y letras
+	$login_pwd = preg_replace('#[^A-Za-z0-9_\&\*\#\@]#i', '', $_POST["lpwd"]); // Filtramos todo excepto numeros y letras
+	$login_design = preg_replace('#[^0-9]#i', '', $_POST["design"]); // Filtramos todo menos las letras
 	// echo $login_id,$login_pwd,$login_design;
-	//now checking with db
+	//ahora revisamos la base de datos
 	 $sql = mysqli_query($connect, "SELECT * FROM user  WHERE userId='$login_id' AND password='$login_pwd' AND did='$login_design' LIMIT 1"); // query the person
       
-    if ($sql) { // evaluate the count
+    if ($sql) { // evaluamos el id
 	     while($row = mysqli_fetch_array($sql)){ 
                         $id = $row["id"];
 			 $did = $row["did"];
