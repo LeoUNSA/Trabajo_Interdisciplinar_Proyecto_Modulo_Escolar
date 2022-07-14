@@ -1,6 +1,6 @@
 <?php
 session_start();
-//including the script to connect to mysql server and to select the db
+//Añadiendo el script para conectar al servidor de mysql y seleccionar la base de datos.
 include ("include/connect.php");
 $id='';
 $did='';
@@ -8,7 +8,7 @@ if(isset($_SESSION["did"])){
    	$vid = $_SESSION["did"];
 
 		 if($vid==1){
-			//go to faculty page
+			//Ir a la página de la facultad.
 			header("location:faculty/index.php");
 		}
 		else if($vid==2){
@@ -20,35 +20,34 @@ if(isset($_SESSION["did"])){
 	
 
 }
-//declaring variables to hod the value that is posted from the form
+//Declarando variables para los valores hod posteados desde el form.
 $error='';
 if(isset($_POST["lid"]) && isset($_POST["lpwd"]) && isset($_POST["design"])){
-	$login_id = preg_replace('#[^A-Za-z0-9_\&\*\#\@]#i', '', $_POST["lid"]); // filter everything but numbers and letters
-	$login_pwd = preg_replace('#[^A-Za-z0-9_\&\*\#\@]#i', '', $_POST["lpwd"]); // filter everything but numbers and letters
-	$login_design = preg_replace('#[^0-9]#i', '', $_POST["design"]); // filter everything but  letters
-	// echo $login_id,$login_pwd,$login_design;
-	//now checking with db
+	$login_id = preg_replace('#[^A-Za-z0-9_\&\*\#\@]#i', '', $_POST["lid"]); // Filtrando todo excepto números y letras.
+	$login_pwd = preg_replace('#[^A-Za-z0-9_\&\*\#\@]#i', '', $_POST["lpwd"]); // Filtrando todo excepto números y letras.
+	$login_design = preg_replace('#[^0-9]#i', '', $_POST["design"]); // Filtrando todo excepto letras.
+	//Revisando con la base de datos.
 	 $sql = mysqli_query($connect, "SELECT * FROM user  WHERE userId='$login_id' AND password='$login_pwd' AND did='$login_design' LIMIT 1"); // query the person
       
-    if ($sql) { // evaluate the count
+    if ($sql) { // Evaluando el conteo
 	     while($row = mysqli_fetch_array($sql)){ 
                         $id = $row["id"];
 			 $did = $row["did"];
 		 }
 		 if($did==1){
-			//go to faculty page
+			//Ir a la página de la facultad
 			$_SESSION["id"] = $id;
 			$_SESSION["did"] = $did;
 			header("location:faculty/index.php");
 		}
 		else if($did==2){
-			//go to hod
+			//Ir a: "hod"
                         $_SESSION["id"] = $id;
 						$_SESSION["did"] = $did;
 			header("location:hod/index.php");
 		}
 		else if($did==3){
-			//go to principal
+			//Ir a: "principal".
                         $_SESSION["id"] = $id;
 						$_SESSION["did"] = $did;
 			header("location:principal/index.php");
